@@ -1,6 +1,4 @@
-import { HomePage } from './pages/HomePage';
-import { ArticlePage } from './pages/ArticlePage';
-import { NotFound } from './pages/NotFound';
+import { HomePage, ArticlePage, NotFound } from './pages';
 import { Routes, Route } from 'react-router-dom';
 
 export const App = () => {

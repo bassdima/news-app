@@ -12,6 +12,15 @@ export const articleApi = createApi({
                     _limit: limit
                 }
             })
+        }),
+        fetchArticleById: build.query<IArticle[], number | string>({
+            query: (id: number | string) => ({
+                url: '/v3/articles',
+                params: {
+                    id: id
+                }
+            })
         })
+
     })
 })

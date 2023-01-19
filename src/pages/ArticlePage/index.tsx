@@ -9,7 +9,7 @@ import { BackgroundArticlePage } from '../../Components/BackgroundArticlePage';
 
 export const ArticlePage = () => {
     const { id } = useParams();
-    const { data: responseData, error, isLoading } = articleApi.useFetchAllArticlesQuery(30);
+    const { data: responseData, error, isLoading } = articleApi.useFetchArticleByIdQuery(id!);
 
     return (
         <>
