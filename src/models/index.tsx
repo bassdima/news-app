@@ -4,7 +4,6 @@ interface LaunchesEventsType {
 }
 
 export interface IArticle {
-    [key: string] : any,
     id: number | string,
     title: string,
     url: string,

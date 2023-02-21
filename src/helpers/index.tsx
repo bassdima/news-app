@@ -12,7 +12,7 @@ export const limitCharacters = (item: string, numOfCharacters: number) => {
 export const compare = (key: string, order: string, query: Array<string>) => {
     return (a: IArticle, b: IArticle) => {
         const isItemIncludesQuery = (item: IArticle) => {
-            return query.map((queryItem) => item[key].toLowerCase().includes(queryItem));
+            return query.map((queryItem) => item[key as keyof typeof item].toString().toLowerCase().includes(queryItem));
         }
 
         const getOrderNumOfItem = (item: IArticle) => {
@@ -30,7 +30,7 @@ export const search = (data: Array<IArticle>, keys: Array<string>, query: Array<
         return keys.some((key) => {
             return query.some((word) => {
                 if ((query.length === 1) || (query.length > 1 && word !== '')) {
-                    return item[key].toLowerCase().includes(word)
+                    return item[key as keyof typeof item].toString().toLowerCase().includes(word)
                 }
             })
         })
